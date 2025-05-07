@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 
-
 function App() {
   const [formData, setFormData] = useState({
     username: "",
@@ -34,6 +33,10 @@ function App() {
 
     if (formData.password !== formData.confirmPassword) {
       alert("Şifreler uyuşmuyor");
+      return;
+    }
+    if (!formData.accepted) {
+      alert("Lütfen koşulları kabul ediniz");
       return;
     }
     alert(
